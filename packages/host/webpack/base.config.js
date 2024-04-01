@@ -89,11 +89,9 @@ module.exports = {
 	plugins: [
 		new ModuleFederationPlugin({
 			name: 'host',
-			// filename: 'remoteEntry.js',
 			remotes: {
 				remoteTodo: 'remoteTodo@http://localhost:4171/remoteEntry.js'
 			},
-			// exposes: {},
 			shared: {
 				'@plumejs/core': {singleton: true}
 			}
@@ -111,33 +109,33 @@ module.exports = {
 		// }),
 		
 	],
-	// optimization: {
-	// 	minimize: true,
-	// 	runtimeChunk: {
-	// 		name: 'runtime'
-	// 	},
-	// 	splitChunks: {
-	// 		chunks: 'all',
-	// 		maxInitialRequests: Infinity,
-	// 		minSize: 0,
-	// 		cacheGroups: {
-	// 			coreVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/core)[\\/]/
-	// 			},
-	// 			uiVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/ui)[\\/]/
-	// 			},
-	// 			routerVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/router)[\\/]/
-	// 			},
-	// 			otherVendor: {
-	// 				test: /[\\/]node_modules[\\/](!@plumejs\/core)(!@plumejs\/ui)(!@plumejs\/router)[\\/]/
-	// 			},
-	// 			default: {
-	// 				minChunks: 1,
-	// 				reuseExistingChunk: true
-	// 			}
-	// 		}
-	// 	}
-	// }
+	optimization: {
+		minimize: true,
+		// runtimeChunk: {
+		// 	name: 'runtime'
+		// },
+		// splitChunks: {
+		// 	chunks: 'all',
+		// 	maxInitialRequests: Infinity,
+		// 	minSize: 0,
+		// 	cacheGroups: {
+		// 		coreVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/core)[\\/]/
+		// 		},
+		// 		uiVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/ui)[\\/]/
+		// 		},
+		// 		routerVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/router)[\\/]/
+		// 		},
+		// 		otherVendor: {
+		// 			test: /[\\/]node_modules[\\/](!@plumejs\/core)(!@plumejs\/ui)(!@plumejs\/router)[\\/]/
+		// 		},
+		// 		default: {
+		// 			minChunks: 1,
+		// 			reuseExistingChunk: true
+		// 		}
+		// 	}
+		// }
+	}
 };

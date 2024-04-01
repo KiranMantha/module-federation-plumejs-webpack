@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const appconstants = {
-	publicPath: 'http://localhost:4171/',
+	publicPath: '/',
 	root: '../',
 	sourceDir: '../src',
 	buildDir: '../dist',
@@ -90,7 +90,6 @@ module.exports = {
 		new ModuleFederationPlugin({
 			name: 'remoteTodo',
 			filename: 'remoteEntry.js',
-			// library: { type: "var", name: "remoteTodo" },
 			remotes: {},
 			exposes: {
 				'./List': './src/components/List.ts',
@@ -112,33 +111,33 @@ module.exports = {
 		// 	patterns: [{ from: 'src/images', to: 'images' }]
 		// })
 	],
-	// optimization: {
-	// 	minimize: true,
-	// 	runtimeChunk: {
-	// 		name: 'runtime'
-	// 	},
-	// 	splitChunks: {
-	// 		chunks: 'all',
-	// 		maxInitialRequests: Infinity,
-	// 		minSize: 0,
-	// 		cacheGroups: {
-	// 			coreVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/core)[\\/]/
-	// 			},
-	// 			uiVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/ui)[\\/]/
-	// 			},
-	// 			routerVendor: {
-	// 				test: /[\\/]node_modules[\\/](@plumejs\/router)[\\/]/
-	// 			},
-	// 			otherVendor: {
-	// 				test: /[\\/]node_modules[\\/](!@plumejs\/core)(!@plumejs\/ui)(!@plumejs\/router)[\\/]/
-	// 			},
-	// 			default: {
-	// 				minChunks: 1,
-	// 				reuseExistingChunk: true
-	// 			}
-	// 		}
-	// 	}
-	// }
+	optimization: {
+		minimize: true,
+		// runtimeChunk: {
+		// 	name: 'runtime'
+		// },
+		// splitChunks: {
+		// 	chunks: 'all',
+		// 	maxInitialRequests: Infinity,
+		// 	minSize: 0,
+		// 	cacheGroups: {
+		// 		coreVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/core)[\\/]/
+		// 		},
+		// 		uiVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/ui)[\\/]/
+		// 		},
+		// 		routerVendor: {
+		// 			test: /[\\/]node_modules[\\/](@plumejs\/router)[\\/]/
+		// 		},
+		// 		otherVendor: {
+		// 			test: /[\\/]node_modules[\\/](!@plumejs\/core)(!@plumejs\/ui)(!@plumejs\/router)[\\/]/
+		// 		},
+		// 		default: {
+		// 			minChunks: 1,
+		// 			reuseExistingChunk: true
+		// 		}
+		// 	}
+		// }
+	}
 };
