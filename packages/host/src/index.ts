@@ -18,7 +18,7 @@ class AppComponent {
 
 Component({
   selector: 'app-root',
-  styles: import('./styles/styles.scss?inline'),
+  styles: import('./styles/styles.scss'),
   root: true
 })(AppComponent);
 

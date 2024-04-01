@@ -6,7 +6,7 @@ class AppComponent {
   todos: string[] = [];
 
   render() {
-    return html`<app-todo-input
+    return html`<h1>This is remote todo</h1><app-todo-input
         onsubmit=${(e) => {
           console.log(e.detail.todo);
           this.todos.push(e.detail.todo);
@@ -18,5 +18,6 @@ class AppComponent {
 
 Component({
   selector: 'app-todo-root',
+  styles: import('./styles/styles.scss'),
   root: true
 })(AppComponent);
