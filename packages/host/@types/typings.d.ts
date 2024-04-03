@@ -55,3 +55,8 @@ interface HTMLElement {
 	function TodoInput();
 	export {TodoInput}
   }
+
+  declare module 'remoteTodo/List' {
+	function TodoList();
+	export {TodoList}
+  }
