@@ -1,4 +1,4 @@
-import { Component, html, render } from '@plumejs/core';
+import { Component, html } from '@plumejs/core';
 import('remoteTodo/Input');
 import('remoteTodo/List');
 
@@ -22,5 +22,3 @@ class AppComponent {
       <app-todo-list data-input=${{ todos: this.todos }}></app-todo-list>`;
   }
 }
-
-render(document.getElementById('root'), html`<app-root></app-root>`);
